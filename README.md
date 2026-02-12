@@ -1,58 +1,49 @@
-# Turborepo Tailwind CSS starter
+#DreamWay – Study Abroad Assistance Portal
 
-This Turborepo starter is maintained by the Turborepo core team.
+DreamWay is a secure, full-stack web platform designed to simplify the study abroad application process. It connects students with consultants through real-time communication while enforcing strict access control and data privacy.
 
-## Using this example
+🚀 Tech Stack
 
-Run the following command:
+Frontend
 
-```sh
-npx create-turbo@latest -e with-tailwind
-```
+Next.js
 
-## What's inside?
+TypeScript
 
-This Turborepo includes the following packages/apps:
+Tailwind CSS
 
-### Apps and Packages
+Backend
 
-- `docs`: a [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `web`: another [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `ui`: a stub React component library with [Tailwind CSS](https://tailwindcss.com/) shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+Nest.js
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+PostgreSQL
 
-### Building packages/ui
+TypeORM
 
-This example is set up to produce compiled styles for `ui` components into the `dist` directory. The component `.tsx` files are consumed by the Next.js apps directly using `transpilePackages` in `next.config.ts`. This was chosen for several reasons:
+Validation & Security
 
-- Make sharing one `tailwind.config.ts` to apps and packages as easy as possible.
-- Make package compilation simple by only depending on the Next.js Compiler and `tailwindcss`.
-- Ensure Tailwind classes do not overwrite each other. The `ui` package uses a `ui-` prefix for it's classes.
-- Maintain clear package export boundaries.
+Zod (Schema Validation)
 
-Another option is to consume `packages/ui` directly from source without building. If using this option, you will need to update the `tailwind.config.ts` in your apps to be aware of your package locations, so it can find all usages of the `tailwindcss` class names for CSS compilation.
+JWT Authentication
 
-For example, in [tailwind.config.ts](packages/tailwind-config/tailwind.config.ts):
+RBAC (Role-Based Access Control)
 
-```js
-  content: [
-    // app content
-    `src/**/*.{js,ts,jsx,tsx}`,
-    // include packages if not transpiling
-    "../../packages/ui/*.{js,ts,jsx,tsx}",
-  ],
-```
+Real-time & Services
 
-If you choose this strategy, you can remove the `tailwindcss` and `autoprefixer` dependencies from the `ui` package.
+Pusher (WebSockets)
 
-### Utilities
+Nodemailer (Transactional Emails)
 
-This Turborepo has some additional tools already setup for you:
+✨ Key Features
 
-- [Tailwind CSS](https://tailwindcss.com/) for styles
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+Secure Authentication & Authorization
+Role-based access (Student, Consultant, Admin) with protected routes and data isolation.
+
+Data Integrity & Validation
+Strict runtime validation of all inputs using Zod to ensure data consistency and security.
+
+Real-Time Updates
+Instant application status updates and notifications powered by Pusher.
+
+Automated Email Communication
+Background email services using Nodemailer for user registration, verification, and status alerts.
